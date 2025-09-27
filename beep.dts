@@ -1,0 +1,17 @@
+pinctrl_beep: beepgrp {
+fsl,pins = <
+MX6ULL_PAD_SNVS_TAMPER1__GPIO5_IO01 0x10B0 /* beep */
+>;
+};
+
+
+
+beep {
+#address-cells = <1>;
+#size-cells = <1>;
+compatible = "atkalpha-beep";
+pinctrl-names = "default";
+pinctrl-0 = <&pinctrl_beep>;
+beep-gpio = <&gpio5 1 GPIO_ACTIVE_HIGH>;
+status = "okay";
+};
